@@ -20,11 +20,6 @@ public class GreenEnemy : Enemy
         }
     }
 
-    public override void HurtSequence()
-    {
-        animator.SetTrigger("isDamaged");
-    }
-
     public override void DeathSequence()
     {
         Instantiate(explosionPrefab, transform.position, transform.rotation);

@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 8749168096542541359}
   - component: {fileID: 6247647387028342587}
   - component: {fileID: 7327903924589766043}
-  - component: {fileID: 4606413317556669067}
   - component: {fileID: 1361889479672164861}
   m_Layer: 7
   m_Name: GreenEnemy
@@ -282,27 +281,6 @@ CompositeCollider2D:
   m_OffsetDistance: 0.00005
   m_UseDelaunayMesh: 0
   m_CompositeGameObject: {fileID: 3347821409492393334}
---- !u!95 &4606413317556669067
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3347821409492393334}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a376566ec886c76479df806fb0aa76d4, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &1361889479672164861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -319,5 +297,5 @@ MonoBehaviour:
   damage: 1
   explosionPrefab: {fileID: 9079247445359637642, guid: 5db4e62277c49be47b671b647ceb16e8, type: 3}
   rb: {fileID: 5451495597394590291}
-  animator: {fileID: 4606413317556669067}
+  animator: {fileID: 0}
   speed: 10
