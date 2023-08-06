@@ -162,6 +162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 2
+  damage: 1
   rb: {fileID: 5056399289518538611}
   minSpeed: 8
   maxSpeed: 15

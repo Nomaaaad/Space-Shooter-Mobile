@@ -7,6 +7,7 @@ public class Meteor : Enemy
     [SerializeField] private float rotateSpeed;
     private float speed;
 
+
     private void Start()
     {
         speed = Random.Range(minSpeed, maxSpeed);
@@ -32,7 +33,9 @@ public class Meteor : Enemy
     {
         if (collision.CompareTag("Player"))
         {
-            Destroy(collision.gameObject);
+            PlayerStats player = collision.GetComponent<PlayerStats>();
+            player.TakeDamage(damage);
+            Destroy(gameObject);
         }
     }
 

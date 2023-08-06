@@ -3,6 +3,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] protected float health;
+    [SerializeField] protected float damage;
     [SerializeField] protected Rigidbody2D rb;
 
     public void TakeDamage(float damage)
