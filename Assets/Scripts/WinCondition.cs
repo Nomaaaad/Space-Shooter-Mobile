@@ -14,6 +14,8 @@ public class WinCondition : MonoBehaviour
 
     void Update()
     {
+        if (EndGameManager.Instance.gameOver == true) return;
+
         timer += Time.deltaTime;
         if(timer >= possibleWinTime)
         {
