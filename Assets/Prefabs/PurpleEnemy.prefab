@@ -298,6 +298,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 3
   damage: 1
+  scoreValue: 10
   explosionPrefab: {fileID: 9079247445359637642, guid: 5db4e62277c49be47b671b647ceb16e8, type: 3}
   rb: {fileID: 4069784288266561774}
   animator: {fileID: 7561692067647234528}

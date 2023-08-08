@@ -163,8 +163,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 2
   damage: 1
+  scoreValue: 5
   explosionPrefab: {fileID: 9079247445359637642, guid: 5db4e62277c49be47b671b647ceb16e8, type: 3}
   rb: {fileID: 5056399289518538611}
+  animator: {fileID: 0}
+  powerUpSpawner: {fileID: 11400000, guid: 10649b0c83bf23b49b5978563ef2b481, type: 2}
   minSpeed: 8
   maxSpeed: 15
   rotateSpeed: 100

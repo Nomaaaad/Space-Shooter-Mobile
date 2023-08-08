@@ -54,19 +54,17 @@ public class FadeCanvas : MonoBehaviour
             yield return new WaitForSeconds(waitTime);
         }
 
-        //SceneManager.LoadScene(levelName);
-
         AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(levelName);
         asyncOperation.allowSceneActivation = false;
 
         loadingScreen.SetActive(true);
         loadingBar.fillAmount = 0;
 
-        while(asyncOperation.isDone == false)
+        while (asyncOperation.isDone == false)
         {
             loadingBar.fillAmount = asyncOperation.progress / .9f;
 
-            if(asyncOperation.progress == .9f)
+            if (asyncOperation.progress == .9f)
             {
                 asyncOperation.allowSceneActivation = true;
             }
@@ -76,15 +74,18 @@ public class FadeCanvas : MonoBehaviour
         StartCoroutine(FadeIn());
     }
 
-    private IEnumerator FadeOutInt(int levelIndex)
+     IEnumerator FadeOutInt(int levelIndex)
     {
         if (fadeStarted) yield break;
+
         fadeStarted = true;
+
         while (canvasGroup.alpha < 1)
         {
             canvasGroup.alpha += changeValue;
             yield return new WaitForSeconds(waitTime);
         }
+
         AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(levelIndex);
         asyncOperation.allowSceneActivation = false;
 
@@ -100,7 +101,6 @@ public class FadeCanvas : MonoBehaviour
             }
             yield return null;
         }
-        StartCoroutine(FadeIn());
         StartCoroutine(FadeIn());
     }
 
