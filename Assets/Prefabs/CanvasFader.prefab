@@ -547,5 +547,5 @@ MonoBehaviour:
   loadingScreen: {fileID: 4386416702643778899}
   loadingBar: {fileID: 2579249400653194200}
   changeValue: 0.04
-  waitTime: 0.02
+  waitTime: 0.01
   fadeStarted: 0

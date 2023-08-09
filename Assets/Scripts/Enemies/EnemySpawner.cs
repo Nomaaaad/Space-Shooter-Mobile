@@ -10,6 +10,8 @@ public class EnemySpawner : MonoBehaviour
 
     [Header("Enemy Prefabs")]
     [SerializeField] private GameObject[] enemy;
+    [SerializeField] private GameObject bossPrefab;
+    [SerializeField] private WinCondition winCondition;
 
     [SerializeField] private float enemySpawnTime;
     private float enemyTimer;
@@ -42,6 +44,17 @@ public class EnemySpawner : MonoBehaviour
             int randomPick = Random.Range(0, enemy.Length);
             Instantiate(enemy[randomPick], new Vector3(Random.Range(maxLeft, maxRight), yPos, 0), Quaternion.identity);
             enemyTimer = 0;
+        }
+    }
+
+    private void OnDisable()
+    {
+        if (!winCondition.canSpawnBoss) return;
+
+        if (bossPrefab != null)
+        {
+            Vector2 spawnPos = mainCamera.ViewportToWorldPoint(new Vector2(.5f, 1.2f));
+            Instantiate(bossPrefab, spawnPos, Quaternion.identity);
         }
     }
 }

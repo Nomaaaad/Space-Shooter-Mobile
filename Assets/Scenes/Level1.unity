@@ -300,7 +300,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 9.777778
+  orthographic size: 7.111111
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -365,6 +365,11 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!4 &765257994 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1113336099073116672, guid: 8443a191df42ed741b747c2c4b3d5a71, type: 3}
+  m_PrefabInstance: {fileID: 7076620544580661194}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &833377194
 GameObject:
   m_ObjectHideFlags: 0
@@ -1190,6 +1195,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1719487402 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6675096670904554350, guid: 0a25057b2bde3534aa539745c17c89c6, type: 3}
+  m_PrefabInstance: {fileID: 2879177552694678011}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a5d0045ba206b648aeca898cf6ebe0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1896041150
 GameObject:
   m_ObjectHideFlags: 0
@@ -1432,6 +1448,22 @@ CanvasGroup:
   m_CorrespondingSourceObject: {fileID: 4342454883821759001, guid: 3421d53241ee4e049aec58bb4a4bc222, type: 3}
   m_PrefabInstance: {fileID: 5612867967102125033}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1422554526103369378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3682263310884575912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a4805e4e0e589b4f9a34eed1eab058f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: []
+  bossPrefab: {fileID: 4338888725125123481, guid: 468ca5ca157f62c4aa23e068336d1d11, type: 3}
+  winCondition: {fileID: 1719487402}
+  enemySpawnTime: 2
 --- !u!1001 &1837385172861028948
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1440,6 +1472,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2483488447631182651, guid: 27ea2db721421c44b959af7e68e1e6ed, type: 3}
+      propertyPath: maxHealth
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 2483488447631182651, guid: 27ea2db721421c44b959af7e68e1e6ed, type: 3}
       propertyPath: healthFill
       value: 
@@ -1502,8 +1538,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 6675096670904554350, guid: 0a25057b2bde3534aa539745c17c89c6, type: 3}
-      propertyPath: spawner.Array.size
+      propertyPath: hasBoss
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6675096670904554350, guid: 0a25057b2bde3534aa539745c17c89c6, type: 3}
+      propertyPath: possibleWinTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6675096670904554350, guid: 0a25057b2bde3534aa539745c17c89c6, type: 3}
+      propertyPath: spawner.Array.size
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6675096670904554350, guid: 0a25057b2bde3534aa539745c17c89c6, type: 3}
       propertyPath: spawner.Array.data[0]
@@ -1512,7 +1556,7 @@ PrefabInstance:
     - target: {fileID: 6675096670904554350, guid: 0a25057b2bde3534aa539745c17c89c6, type: 3}
       propertyPath: spawner.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 3682263310884575912}
     - target: {fileID: 6897543223559218973, guid: 0a25057b2bde3534aa539745c17c89c6, type: 3}
       propertyPath: m_Name
       value: WinCondition
@@ -1562,6 +1606,38 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a25057b2bde3534aa539745c17c89c6, type: 3}
+--- !u!1 &3682263310884575912
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4776707786276833930}
+  - component: {fileID: 1422554526103369378}
+  m_Layer: 0
+  m_Name: EnemySpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4776707786276833930
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3682263310884575912}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 765257994}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &5612867967102125033
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1807,7 +1883,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 2554638013250068143, guid: 8443a191df42ed741b747c2c4b3d5a71, type: 3}
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 1113336099073116672, guid: 8443a191df42ed741b747c2c4b3d5a71, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4776707786276833930}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8443a191df42ed741b747c2c4b3d5a71, type: 3}
 --- !u!1001 &7726797824978250625
