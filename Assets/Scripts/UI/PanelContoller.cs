@@ -5,6 +5,7 @@ public class PanelContoller : MonoBehaviour
     [SerializeField] private CanvasGroup canvasGroup;
     [SerializeField] private GameObject winScreen;
     [SerializeField] private GameObject loseScreen;
+    [SerializeField] private GameObject adLoseScreen;
 
     void Start()
     {
@@ -21,5 +22,17 @@ public class PanelContoller : MonoBehaviour
     {
         canvasGroup.alpha = 1;
         loseScreen.SetActive(true);
+    }
+
+    public void ActivateAdLose()
+    {
+        canvasGroup.alpha = 1;
+        adLoseScreen.SetActive(true);
+    }
+
+    public void DeactivateAdLose()
+    {
+        canvasGroup.alpha = 0;
+        adLoseScreen.SetActive(false);
     }
 }

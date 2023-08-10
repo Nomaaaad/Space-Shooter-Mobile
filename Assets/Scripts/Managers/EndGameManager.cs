@@ -11,10 +11,13 @@ public class EndGameManager : MonoBehaviour
     public string lvlUnclock = "LevelUnlock";
 
     public bool gameOver;
-    private int score;
+    public bool possibleWin;
+    public int score;
 
     private PanelContoller panelContoller;
     private TextMeshProUGUI scoreText;
+    private PlayerStats player;
+    private RewardAd rewardAd;
 
 
 
@@ -37,11 +40,12 @@ public class EndGameManager : MonoBehaviour
 
     public void WinGame()
     {
+        player.canTakeDmg = false;
         ScoreSet();
         panelContoller.ActivateWin();
 
         int nextLevel = SceneManager.GetActiveScene().buildIndex + 1;
-        if(nextLevel > PlayerPrefs.GetInt(lvlUnclock, 0))
+        if (nextLevel > PlayerPrefs.GetInt(lvlUnclock, 0))
         {
             PlayerPrefs.SetInt(lvlUnclock, nextLevel);
         }
@@ -53,13 +57,31 @@ public class EndGameManager : MonoBehaviour
         panelContoller.ActivateLose();
     }
 
+    public void AdLoseGame()
+    {
+        ScoreSet();
+        if (rewardAd.adNumber > 0)
+        {
+            rewardAd.adNumber -= 1;
+            panelContoller.ActivateAdLose();
+        }
+        else
+        {
+            panelContoller.ActivateLose();
+        }
+    }
+
     public void ResolveGame()
     {
-        if (gameOver == false)
+        if (possibleWin && gameOver == false)
         {
             WinGame();
         }
-        else
+        else if(!possibleWin && gameOver) 
+        {
+            AdLoseGame();
+        }
+        else if (possibleWin && gameOver) 
         {
             LoseGame();
         }
@@ -99,5 +121,15 @@ public class EndGameManager : MonoBehaviour
         }
 
         score = 0;
+    }
+
+    public void RegisterPlayerStats(PlayerStats stats)
+    {
+        player = stats;
+    }
+
+    public void RegisterRewardAd(RewardAd rewardAd)
+    {
+       this.rewardAd = rewardAd;
     }
 }

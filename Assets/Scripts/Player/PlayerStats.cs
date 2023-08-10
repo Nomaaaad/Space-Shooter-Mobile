@@ -13,16 +13,33 @@ public class PlayerStats : MonoBehaviour
 
     private float health;
     private bool canPlayAnim = true;
+    public bool canTakeDmg = true;
 
-    void Start()
+    void OnEnable()
     {
         health = maxHealth;
         healthFill.fillAmount = health / maxHealth;
         EndGameManager.Instance.gameOver = false;
+        StartCoroutine(DamageProtection());
+    }
+
+    private void Start()
+    {
+        EndGameManager.Instance.RegisterPlayerStats(this);
+        EndGameManager.Instance.possibleWin = false;
+    }
+
+    IEnumerator DamageProtection()
+    {
+        canPlayAnim = false;
+        yield return new WaitForSeconds(1.5f);
+        canTakeDmg = true;
     }
 
     public void TakeDamage(float damage)
     {
+        if (!canTakeDmg) return;
+
         if (shield.isProtecting) return;
 
         health -= damage;
@@ -40,14 +57,14 @@ public class PlayerStats : MonoBehaviour
             EndGameManager.Instance.gameOver = true;
             EndGameManager.Instance.StartResolveSequence();
             Instantiate(explosionPrefab, transform.position, transform.rotation);
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 
     public void AddHealth(int healAmount)
     {
         health += healAmount;
-        if(healAmount >= maxHealth) health = maxHealth;
+        if (healAmount >= maxHealth) health = maxHealth;
         healthFill.fillAmount = health / maxHealth;
     }
 
