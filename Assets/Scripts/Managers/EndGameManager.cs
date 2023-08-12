@@ -79,7 +79,8 @@ public class EndGameManager : MonoBehaviour
         }
         else if(!possibleWin && gameOver) 
         {
-            AdLoseGame();
+            //AdLoseGame();
+            LoseGame();
         }
         else if (possibleWin && gameOver) 
         {

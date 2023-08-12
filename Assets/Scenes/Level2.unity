@@ -300,7 +300,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 9.777778
+  orthographic size: 7.111111
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1249,6 +1249,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2008602844 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6675096670904554350, guid: 0a25057b2bde3534aa539745c17c89c6, type: 3}
+  m_PrefabInstance: {fileID: 2879177552694678011}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a5d0045ba206b648aeca898cf6ebe0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2012467147
 GameObject:
   m_ObjectHideFlags: 0
@@ -1489,6 +1500,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8110511565938744878, guid: 27ea2db721421c44b959af7e68e1e6ed, type: 3}
+      propertyPath: laserBullet
+      value: 
+      objectReference: {fileID: 7796425878366874621, guid: 9d8d1bcaa3a48ca47902f1e4789abec1, type: 3}
     - target: {fileID: 8479560549591462602, guid: 27ea2db721421c44b959af7e68e1e6ed, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1761,6 +1776,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 275861462403232421, guid: 8443a191df42ed741b747c2c4b3d5a71, type: 3}
+      propertyPath: winCondition
+      value: 
+      objectReference: {fileID: 2008602844}
     - target: {fileID: 1113336099073116672, guid: 8443a191df42ed741b747c2c4b3d5a71, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

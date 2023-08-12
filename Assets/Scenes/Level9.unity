@@ -300,7 +300,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 9.777778
+  orthographic size: 7.111111
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1511,6 +1511,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 6675096670904554350, guid: 0a25057b2bde3534aa539745c17c89c6, type: 3}
+      propertyPath: hasBoss
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6675096670904554350, guid: 0a25057b2bde3534aa539745c17c89c6, type: 3}
       propertyPath: possibleWinTime
       value: 120
       objectReference: {fileID: 0}
@@ -1571,6 +1575,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a25057b2bde3534aa539745c17c89c6, type: 3}
+--- !u!114 &2879177552694678012 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6675096670904554350, guid: 0a25057b2bde3534aa539745c17c89c6, type: 3}
+  m_PrefabInstance: {fileID: 2879177552694678011}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a5d0045ba206b648aeca898cf6ebe0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5612867967102125033
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1765,6 +1780,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 275861462403232421, guid: 8443a191df42ed741b747c2c4b3d5a71, type: 3}
+      propertyPath: bossPrefab
+      value: 
+      objectReference: {fileID: 4338888725125123481, guid: 468ca5ca157f62c4aa23e068336d1d11, type: 3}
+    - target: {fileID: 275861462403232421, guid: 8443a191df42ed741b747c2c4b3d5a71, type: 3}
+      propertyPath: winCondition
+      value: 
+      objectReference: {fileID: 2879177552694678012}
     - target: {fileID: 275861462403232421, guid: 8443a191df42ed741b747c2c4b3d5a71, type: 3}
       propertyPath: enemySpawnTime
       value: 1

@@ -32,7 +32,6 @@ public class AdsInitialiser : MonoBehaviour, IUnityAdsInitializationListener
 
     public void OnInitializationComplete()
     {
-        Debug.Log("Unity Ads initialization complete.");
     }
 
     public void OnInitializationFailed(UnityAdsInitializationError error, string message)
